@@ -1,0 +1,35 @@
+{% load crispy_forms_tags %}
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+<div style="background-color: #008080; min-height: 100vh; display: flex; justify-content: center; align-items: center;">
+    <div style="max-width: 400px; width: 100%; padding: 20px; background-color: #f8f9fa; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        
+        <h1 style="font-size: 2em; color: #343a40; text-align: center;">Login</h1>
+
+        {% if form.errors %}
+        <p style="color: red; text-align: center;">You have entered an incorrect username or password</p>
+        {% endif %}
+
+        {% if next %}
+            {% if not user.is_authenticated %}
+            <h1 style="font-size: 1.5em; color: #343a40; text-align: center;">Please Login to view that page</h1>
+            {% else %}
+            <h1 style="font-size: 1.5em; color: #343a40; text-align: center;">Please Login</h1>
+            {% endif %}
+        {% endif %}
+
+        <form action="{% url 'login' %}" method="POST" style="margin-top: 20px;">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div style="text-align: center; margin-top: 20px;">
+                <input type="submit" value="Login" style="background-color: #008080; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 1em;">
+                <input type="hidden" name="next" value="{{ next }}">
+            </div>
+        </form>
+
+        <p style="text-align: center; margin-top: 20px; color: #343a40;">
+            No account? <a href="{% url 'signup' %}" style="color: #008080; text-decoration: none;">Sign Up</a>
+        </p>
+    </div>
+</div>

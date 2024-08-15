@@ -1,0 +1,77 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Page Title */
+h1 {
+    color: #008080; /* Teal color */
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2em;
+}
+
+/* Notes List Container */
+.notes-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Individual Note Card */
+.note-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(33.333% - 40px); /* Three cards per row, with spacing */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in-out;
+}
+
+.note-card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.note-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.note-details {
+    padding: 15px;
+}
+
+.note-details h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.note-details p {
+    margin: 10px 0;
+    font-size: 1em;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .note-card {
+        width: calc(50% - 20px); /* Two cards per row on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .note-card {
+        width: 100%; /* One card per row on mobile */
+    }
+}

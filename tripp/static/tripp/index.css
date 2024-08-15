@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff; /* Light blue background */
+    color: #333;
+}
+
+.navbar {
+    background-color: #008080; /* Teal color for the navbar */
+    color: white;
+    padding: 15px;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar-links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li {
+    margin-left: 20px;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: transform 0.2s ease-in-out;
+}
+
+.navbar-links a:hover {
+    text-decoration:solid;
+    transform: scale(1.05);
+}
+
+.navbar-user {
+    color: white;
+}
+
+.navbar-user a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar-user a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+
+.footer {
+    background-color:black;
+    color: whitesmoke;
+    padding: 10px;
+    text-align: center;
+    position: sticky;
+    width: 100%;
+   
+}

@@ -1,0 +1,35 @@
+{% extends 'tripp/_base.html' %}
+
+{% load static %}
+
+
+</head>
+{% block title %}Trip Details{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'tripp/detail.css' %}">
+<h1>{{ trip.city }}</h1>
+<p>{{ trip.country }}</p>
+<p><strong>Date:</strong> {{ trip.start_date|date:"M d, Y" }} - {{ trip.end_date|date:"M d, Y" }}</p>
+
+<hr>
+
+<h2>Notes</h2>
+<div class="note-list">
+    {% for note in notes %}
+    <a href ="{%url 'note-detail' note.id%}">
+    <div class="note-item">
+        <img src="{{ note.img.url }}" alt="{{ note.name }}" class="note-img">
+        <h3>{{ note.name }}</h3>
+        <p><strong>Rating:</strong> {{ note.rating }}/5</p>
+    </div>
+    {% empty %}
+    <p>No notes available for this trip.</p>
+    {% endfor %}
+</a>
+</div>
+
+<hr>
+
+<a href="{% url 'note-create'  %}" class="btn">Add New Note</a>
+{% endblock %}

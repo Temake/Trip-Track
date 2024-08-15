@@ -1,0 +1,24 @@
+{% extends "tripp/_base.html" %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'tripp/notelist.css' %}">
+<h1>My Notes</h1>
+
+<div class="notes-list">
+    {% for note in object_list %}
+    <div class="note-card">
+        <img src="{{ note.img.url }}" alt="{{ note.name }}" class="note-img">
+        <div class="note-details">
+            <h2>{{ note.name }}</h2>
+            <p>{{ note.description }}</p>
+            <p><strong>Rating:</strong> {{ note.rating }}/5</p>
+        </div>
+    </div>
+    {% empty %}
+    <p>No notes available.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

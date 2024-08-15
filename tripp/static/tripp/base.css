@@ -1,0 +1,128 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Auth Navigation */
+.auth-navigation {
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.auth-navigation .btn {
+    background-color: #008080;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    transform: scale(1);
+    animation: slideInFromBottom 1.5s ease-in-out;
+}
+
+.auth-navigation .btn:hover {
+    background-color: #006666;
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Specific Button Animations */
+.dashboard-btn {
+    animation-delay: 0.2s;
+}
+
+.logout-btn {
+    animation-delay: 0.4s;
+}
+
+.login-btn {
+    animation-delay: 0.2s;
+}
+
+/* Travel Quote Section */
+.travel-quote {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+    
+}
+
+.travel-quote h1 {
+    font-size: 2em;
+    color: #008080;
+    margin-bottom: 10px;
+    animation: slideInFromLeft 1.5s ease-in-out;
+}
+
+.travel-quote p {
+    font-size: 1.2em;
+    color: #555;
+    animation: slideInFromRight 1.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromBottom {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .travel-quote h1 {
+        font-size: 1.5em;
+    }
+
+    .travel-quote p {
+        font-size: 1em;
+    }
+
+    .auth-navigation .btn {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-navigation {
+        margin-top: 10px;
+    }
+
+    .travel-quote {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .travel-quote h1 {
+        font-size: 1.3em;
+    }
+
+    .travel-quote p {
+        font-size: 0.9em;
+    }
+}

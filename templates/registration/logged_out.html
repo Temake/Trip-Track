@@ -1,0 +1,14 @@
+{% load crispy_forms_tags %}
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+<div style="background-color: #008080; min-height: 100vh; display: flex; justify-content: center; align-items: center;">
+    <div style="max-width: 400px; width: 100%; padding: 20px; background-color: #f8f9fa; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center;">
+
+        <h1 style="font-size: 2em; color: #343a40;">You have been logged out</h1>
+
+        <p style="font-size: 1.2em; color: #343a40; margin-top: 20px;">
+            <a href="{% url 'login' %}" style="color: #008080; text-decoration: none; font-weight: bold;">Login Here</a>
+        </p>
+
+    </div>
+</div>

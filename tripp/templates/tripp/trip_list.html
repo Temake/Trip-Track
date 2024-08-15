@@ -1,0 +1,62 @@
+{% extends 'tripp/_base.html' %}
+{% load static %}
+
+
+{% block title %}My Trips{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'tripp/sty.css' %}">
+<h1>My Trips</h1>
+<div class="trip-list">
+    {% for trip in trips %}
+    <div class="trip-item">
+        <h2>{{ trip.city }}</h2>
+        <p>{{ trip.country }}</p>
+        <p><strong>Date:</strong> {{ trip.start_date}}-{{trip.end_date}}</p>
+        <a href="{% url 'trip-detail' trip.id  %}" class="btn">View Details</a>
+    </div>
+    {% endfor %}
+</div>
+<script>alert('welcome,'{{user.username}})</script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <h1>MY Trips</h1>
+{% if user.is_authenticated %}
+<p>Logged in as {{user.username}}</p>
+<p><a href ="{%url 'logout'%}">Logout</a></p>
+{% else %}
+    <p>Please <a href ="{%url 'login'%}">Login</a></p>
+{% endif %}
+
+<ul>
+    {% for trip in trips  %}
+    <li> {{trip.country}}| {{trip.city}}</li>
+    
+    {% endfor %}
+</ul> {% endcomment %}

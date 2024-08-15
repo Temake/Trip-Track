@@ -1,0 +1,22 @@
+
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'tripp/base.css' %}">
+<div class="auth-navigation">
+    {% if user.is_authenticated %}
+        <a href="{% url 'trip-list' %}" class="btn dashboard-btn">Go to Dashboard</a>
+        <a href="{% url 'logout' %}" class="btn logout-btn">Logout</a>
+    {% else %}
+        <a href="{% url 'login' %}" class="btn login-btn">Login</a>
+    {% endif %}
+</div>
+
+
+<article class="travel-quote">
+    <h1>"The world is a book, and those who do not travel read only one page."</h1>
+    <p>– Saint Augustine</p>
+</article>
+
+{% endblock %}

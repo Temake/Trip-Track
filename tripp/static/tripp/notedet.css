@@ -1,0 +1,111 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Page Title */
+h1 {
+    color: #008080; /* Teal color to match the theme */
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2em;
+}
+
+/* Note Detail Container */
+.note-detail {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Note Details */
+.note-detail p {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+.note-detail p strong {
+    font-weight: bold;
+}
+
+.note-detail img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+/* Image Styling */
+.note-detail img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Note Description */
+.note-detail p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+        margin-top: 15px;
+    }
+
+    .note-detail {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .note-detail p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .note-detail {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .note-detail p {
+        font-size: 0.9em;
+    }
+
+    .note-detail img {
+        margin: 10px 0;
+    }
+}
+
+/* Larger Screens (Desktops) */
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 2.5em;
+        margin-top: 30px;
+    }
+
+    .note-detail {
+        max-width: 900px;
+        padding: 30px;
+    }
+
+    .note-detail p {
+        font-size: 1.2em;
+    }
+}
