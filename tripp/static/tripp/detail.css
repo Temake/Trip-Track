@@ -1,3 +1,50 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    font-size: 2em;
+    color: #008080;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.trip-actions, .note-actions {
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #008080;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #006666;
+}
+
+.btn-danger {
+    background-color: #d9534f;
+}
+
+.btn-danger:hover {
+    background-color: #c9302c;
+}
+
+/* Note List Styles */
 .note-list {
     display: flex;
     flex-wrap: wrap;
@@ -7,35 +54,87 @@
 
 .note-item {
     background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 15px;
-    width: calc(33.333% - 40px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: calc(33.333% - 20px); /* Three items per row */
     text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.note-item:hover {
+    transform: scale(1.05);
 }
 
 .note-img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 8px;
     margin-bottom: 10px;
 }
 
-.note-item h3 {
+.note-actions {
     margin-top: 10px;
-    font-size: 1.2em;
-}
-.btn {
-    background-color: #008080;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
 }
 
-.btn:hover {
-    background-color: #006666;
+/* Responsive Design */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+
+    .note-item {
+        width: calc(50% - 20px); /* Two items per row */
+    }
+
+    .btn, .btn-danger {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.6em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .note-item {
+        width: 100%; /* One item per row */
+    }
+
+    .btn, .btn-danger {
+        padding: 7px 14px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.4em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    .note-item {
+        padding: 15px;
+    }
+
+    .note-img {
+        margin-bottom: 8px;
+    }
+
+    .btn, .btn-danger {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
 }

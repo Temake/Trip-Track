@@ -4,6 +4,11 @@
 
 {% block content %}
 <link rel="stylesheet" href="{% static 'tripp/notedet.css' %}">
+<a href="{% url 'note-update' note.id %}" class="edit-button">Edit</a>
+<form action="{%url 'note-delete' note.id%}" method="post">
+   {% csrf_token %}
+   <input type='submit' value='Delete' class='edit-butto'/>
+</form>
 <h1>Note detail</h1>
  <div class='note-detail' >
     <p>{{note.name}}</p>

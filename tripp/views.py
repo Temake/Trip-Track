@@ -2,7 +2,7 @@ from django.db.models.base import Model as Model
 from django.db.models.query import QuerySet
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView,CreateView,DetailView,ListView
+from django.views.generic import TemplateView,CreateView,DetailView,ListView,UpdateView,DeleteView
 from .models import Trip,Note
 
 # Create your views here.
@@ -57,4 +57,37 @@ class NoteCreateView(CreateView):
         trips = Trip.objects.filter(owner=self.request.user)
         form.fields['trip'].queryset = trips
         return form
+class NoteUpdateView(UpdateView):
+    model =Note
+    fields= '__all__'
+    success_url=reverse_lazy('note-list')
 
+    def get_object(self):
+        return Note.objects.get(id=self.kwargs['id'])
+
+    
+    def get_form(self):
+        form = super(NoteUpdateView,self).get_form()
+        trips = Trip.objects.filter(owner=self.request.user)
+        form.fields['trip'].queryset = trips
+        return form
+    
+class NoteDeleteView(DeleteView):
+    model =Note
+    success_url=reverse_lazy('note-list')
+    def get_object(self):
+        return Note.objects.get(id=self.kwargs['id'])
+class TripUpdateView(UpdateView):
+    model = Trip
+    fields = ['city', 'country', 'start_date', 'end_date']
+    success_url = reverse_lazy('trip-list')
+
+    def get_object(self):
+        return Trip.objects.get(id=self.kwargs['id'])
+
+class TripDeleteView(DeleteView):
+    model = Trip
+    success_url = reverse_lazy('trip-list')
+
+    def get_object(self):
+        return Trip.objects.get(id=self.kwargs['id'])
