@@ -1,0 +1,23 @@
+# Python
+*.pyc
+__pycache__/
+
+# Django
+*.sqlite3
+/media/
+/static/
+*.log
+*.pot
+*.mo
+
+# Environments
+.env
+venv/
+
+# Django ignore pattern
+local_settings.py
+db.sqlite3
+*.log
+*.pot
+*.mo
+__pycache__/

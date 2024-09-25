@@ -19,29 +19,35 @@ p {
 
 .trip-actions, .note-actions {
     margin-top: 20px;
+    display: flex;
+    gap: 10px; /* Spacing between buttons */
+    align-items: center;
 }
 
+/* Button Styles */
 .btn {
-    background-color: #008080;
+    background-color:  #008080; /* Same red color for both buttons */
     color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-    margin-right: 10px;
     display: inline-block;
     transition: background-color 0.3s ease;
+    border: none; /* Ensures buttons are styled consistently */
+    cursor: pointer;
+}
+.btn-danger {
+    margin-bottom: auto;
+    margin-top: 18px;
+    padding: 12px 26px;
 }
 
 .btn:hover {
-    background-color: #006666;
+    background-color:  #1a5b5b; /* Darker red on hover for both buttons */
 }
 
-.btn-danger {
-    background-color: #d9534f;
-}
-
-.btn-danger:hover {
-    background-color: #c9302c;
+form {
+    display: inline; /* Ensures form buttons align horizontally */
 }
 
 /* Note List Styles */
@@ -75,6 +81,9 @@ p {
 
 .note-actions {
     margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
 }
 
 /* Responsive Design */
@@ -91,7 +100,7 @@ p {
         width: calc(50% - 20px); /* Two items per row */
     }
 
-    .btn, .btn-danger {
+    .btn {
         padding: 8px 16px;
         font-size: 0.9em;
     }
@@ -110,7 +119,7 @@ p {
         width: 100%; /* One item per row */
     }
 
-    .btn, .btn-danger {
+    .btn {
         padding: 7px 14px;
         font-size: 0.9em;
     }
@@ -133,7 +142,7 @@ p {
         margin-bottom: 8px;
     }
 
-    .btn, .btn-danger {
+    .btn {
         padding: 6px 12px;
         font-size: 0.8em;
     }
